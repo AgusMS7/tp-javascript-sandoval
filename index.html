@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rick and Morty Explorer</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="main-header">
+        <header class="main-header">
+          <img src="./assets/rick-and-morty-header.jpg" alt="Rick and Morty Header" class="header-image" />
+        </header>
+        <div class="search-container">
+          <input 
+            type="text" 
+            id="search-input" 
+            placeholder="Buscar personajes..." 
+            aria-label="Buscar personajes"
+          />
+          <div id="search-status" class="search-status" aria-live="polite"></div>
+        </div>
+      </header>
+
+      <main>
+        <div id="loading" class="loading">
+          <div class="portal-spinner"></div>
+          <p>Cargando personajes...</p>
+        </div>
+        
+        <div id="error-message" class="error-message hidden">
+          <p>¡Ups! Ocurrió un error al cargar los personajes.</p>
+          <button id="retry-button">Intentar de nuevo</button>
+        </div>
+        
+        <div id="no-results" class="no-results hidden">
+          <p>No se encontraron personajes con ese nombre.</p>
+          <p>Intenta con otro término de búsqueda.</p>
+        </div>
+        
+        <div id="character-grid" class="character-grid"></div>
+        
+        <div id="pagination" class="pagination hidden">
+          <button id="prev-page" disabled>Anterior</button>
+          <span id="page-info">Página 1 de 1</span>
+          <button id="next-page">Siguiente</button>
+        </div>
+      </main>
+
+      <footer>
+        <p>TP Javascript - Agustín Sandoval</p>
+        <p>Datos obtenidos de <a href="https://rickandmortyapi.com" target="_blank">Rick and Morty API</a></p>
+      </footer>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
